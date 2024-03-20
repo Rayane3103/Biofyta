@@ -8,7 +8,7 @@ require('dotenv').config()
 const app = express()
 
 Connectdb()
-
+app.use(corse())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
