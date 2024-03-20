@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
-    id: {type: String, required:true},
-    name: {type: String, required:true},
+    
+    productName: {type: String, required:true},
     scName: {type: String, required:true},
     arName: {type: String, required:true},
     price: {type: Number, required:true},
@@ -14,9 +14,9 @@ const productSchema = new mongoose.Schema({
     propriete: {type: String, required:true},
     modeUtilisation: {type: String, required:true},
     precaution: {type: String, required:true},
-    isPromotion:{type: Boolean, required:true},
+    isPromotion:{type: Boolean, default: false},
     promotionPrice:{type: Number, required:false},
     
-},{timestamps});
+},{timestamps: true});
 
 module.exports= mongoose.model('product', productSchema);
