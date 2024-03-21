@@ -1,22 +1,22 @@
 const mongoose = require('mongoose')
 
 const productSchema = new mongoose.Schema({
-    
-    productName: {type: String, required:true},
-    scName: {type: String, required:true},
-    arName: {type: String, required:true},
-    price: {type: Number, required:true},
-    indication: {type: Array, required:true},
-    contreIndication: {type: Array, required:true},
-    description: {type: String, required:true},
+    Image: {type:String, required:true},
+    ProductName: {type: String, required:true},
+    ProductScientificName: {type: String, required:true},
+    ProductArabicName: {type: String, required:true},
+    Productdesc: {type: String, required:true},
     stock:{type: Number, required:true},
-    image: {type: String, required:true},
-    propriete: {type: String, required:true},
-    modeUtilisation: {type: String, required:true},
-    precaution: {type: String, required:true},
-    isPromotion:{type: Boolean, default: false},
-    promotionPrice:{type: Number, required:false},
-    
+    Price: {type: Number, required:true},
+    PromotionPrice:{type: Number, required:false},
+    Promotion:{type: Boolean, default: false},
+    Indication: {type: Array, required:true},
+    ContreIndication: {type: Array, required:true},
+    Propriete: {type: String, required:true},
+    ModeUtilisation: {type: String, required:true},
+    Precaution: {type: String, required:true},
+    aromatherapie:{type: Boolean, default: false},
+    epicerie:{type: Boolean, default: false},
 },{timestamps: true});
 
 module.exports= mongoose.model('product', productSchema);
