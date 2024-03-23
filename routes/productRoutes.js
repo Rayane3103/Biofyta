@@ -30,7 +30,7 @@ fileFilter: (req,file,cb)=>{
 router.route('/product')
 .post(upload.single('Image'),controller.createProduct)
 .get(controller.getAllProducts)
-
+//idk
 router.route('/product/:id')
 .delete(controller.deleteProduct)
 .get(controller.getOneProduct)
