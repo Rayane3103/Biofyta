@@ -3,41 +3,10 @@ const Product = require('../models/product')
 
 const createProduct = async (req,res)=>{
     try{
-        const {
-            ProductName,
-            ProductScientificName,
-            ProductArabicName,
-            Productdesc,
-            stock,
-            Price,
-            PromotionPrice,
-            Promotion,
-            Indication,
-            ContreIndication,
-            Propriete,
-            ModeUtilisation,
-            Precaution,
-            aromatherapie,
-            epicerie,
-        } = req.body;
+        const varPro = req.body;
         
         const newProduct = new Product({
-            Image: req.file.filename,
-            ProductName,
-            ProductScientificName,
-            ProductArabicName,
-            Productdesc,
-            stock,
-            Price,
-            PromotionPrice,
-            Promotion,
-            Indication,
-            ContreIndication,
-            Propriete,
-            ModeUtilisation,
-            Precaution,
-            aromatherapie,
-            epicerie,
+            varPro,    
         });
         
         await newProduct.save()
