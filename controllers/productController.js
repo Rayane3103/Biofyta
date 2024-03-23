@@ -13,7 +13,7 @@ const createProduct = async (req,res)=>{
     res.status(201).json({ success: true, message: 'Product added successfully', product: newProduct });
 }catch (error) {
     
-    res.status(500).json("nkmk sayah")
+    res.status(500).json("nkmk sayah ",error)
     
 }}
 
