@@ -3,17 +3,49 @@ const Product = require('../models/product')
 
 const createProduct = async (req,res)=>{
     try{
-        const varPro = req.body;
+        const {
+            Image,
+            ProductName,
+            ProductScientificName,
+            ProductArabicName,
+            Productdesc,
+            stock,
+            Price,
+            PromotionPrice,
+            Promotion,
+            Indication,
+            ContreIndication,
+            Propriete,
+            ModeUtilisation,
+            Precaution,
+            aromatherapie,
+            epicerie,
+        } = req.body;
         
         const newProduct = new Product({
-            varPro,    
+            Image,
+            ProductName,
+            ProductScientificName,
+            ProductArabicName,
+            Productdesc,
+            stock,
+            Price,
+            PromotionPrice,
+            Promotion,
+            Indication,
+            ContreIndication,
+            Propriete,
+            ModeUtilisation,
+            Precaution,
+            aromatherapie,
+            epicerie,
         });
         
         await newProduct.save()
     res.status(201).json({ success: true, message: 'Product added successfully', product: newProduct });
 }catch (error) {
     
-    res.status(500).json("nkmk sayah ",error)
+    res.status(500).json("nkmk sayah",error)
     
 }}
 
