@@ -22,6 +22,7 @@ const createProduct = async (req,res)=>{
         } = req.body;
         
         const newProduct = new Product({
+            Image: req.file.filename,
             ProductName,
             ProductScientificName,
             ProductArabicName,
@@ -37,14 +38,13 @@ const createProduct = async (req,res)=>{
             Precaution,
             aromatherapie,
             epicerie,
-            Image: req.file.filename
         });
         
         await newProduct.save()
     res.status(201).json({ success: true, message: 'Product added successfully', product: newProduct });
 }catch (error) {
     
-    console.error('Error adding product:', error);
+    res.status(500).json("nkmk sayah")
     
 }}
 
